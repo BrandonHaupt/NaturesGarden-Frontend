@@ -3,6 +3,6 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     proxy: 'https://naturesgarden-default-rtdb.firebaseio.com/',
-    proxy: 'http://backend.test/',
+    proxy: 'https://admirable-mandazi-44a0f9.netlify.app',
   }
 })
