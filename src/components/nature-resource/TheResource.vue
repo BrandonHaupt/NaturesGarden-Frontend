@@ -16,8 +16,8 @@
                 :key="result.id"
                 :id='result.id'
                 :name='result.name'
-                :isTrue='result.isTrue'
-                :nativeTo='result.nativeTo'
+                :edible='result.edible'
+                :origin='result.origin'
                 :benefits='result.benefits'
                 :description='result.description'
                 :url='result.url'>
@@ -34,7 +34,7 @@
 <script>
 import ResourceResult from './ResourceResult.vue'
 
-const url = 'https://naturesgarden-default-rtdb.firebaseio.com/'
+const url = 'https://naturesgarden-backend.onrender.com/nature/'
 
 export default {
 
@@ -79,7 +79,7 @@ export default {
             this.isLoading = true
             this.error = null
 
-            fetch(`${url}/resource.json`)
+            fetch(`${url}`)
             .then((response) => {
                 if(response.ok){
                     return response.json()
@@ -92,8 +92,8 @@ export default {
                     results.push({
                         id: id,
                         name: data[id].name,
-                        isTrue: data[id].isTrue,
-                        nativeTo: data[id].nativeTo,
+                        edible: data[id].edible,
+                        origin: data[id].origin,
                         url: data[id].url,
                         benefits: data[id].benefits,
                         description: data[id].description
@@ -138,7 +138,7 @@ export default {
         // }
 
         deleteItem(id) {
-            const url = `https://naturesgarden-default-rtdb.firebaseio.com/resource/${id}`;
+            const url = `https://naturesgarden-backend.onrender.com/nature/${id}`;
 
             // firebase.auth().currentUser.getIdToken(true)
 

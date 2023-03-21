@@ -11,8 +11,8 @@
                 <div class="card__title">
                     <p class="id">ID: {{id}}</p>
                     <div class="line1">
-                        <p class="nativeTo">Native To: {{nativeTo}}</p>
-                        <p class="edible">Edible: {{isTrue}}</p>
+                        <p class="nativeTo">Native To: {{origin}}</p>
+                        <p class="edible">Edible: {{edible}}</p>
                     </div>
                     <p class="benefits">{{benefits}}</p>
                     <p class="description">{{description}}</p>
@@ -35,7 +35,7 @@
 // import { initializeApp } from 'firebase/app';
 
 export default {
-    props: ['id','name', 'isTrue', 'nativeTo', 'url', 'benefits', 'description'],
+    props: ['id','name', 'edible', 'origin', 'url', 'benefits', 'description'],
 
     inject: ['deleteItem'],
 

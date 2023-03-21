@@ -9,11 +9,11 @@
                 <input type="text" id="name" name="name" v-model.trim="enteredName" placeholder="Resource Name">
 
                 <!-- If it is edible -->
-                <input type="checkbox" id="isEdible" value="true" name="isEdible" v-model="isTrue">
+                <input type="checkbox" id="edible" value="true" name="edible" v-model="edible">
                 <label for="true"> Edible?</label>
                 
                 <!-- Native to -->
-                <input type="text" id="nativeTo" name="nativeTo" v-model.trim="nativeTo" placeholder="Where is the plant Native to?">
+                <input type="text" id="origin" name="origin" v-model.trim="origin" placeholder="Where is the plant Native to?">
 
                 <!-- URL -->
                 <input type="text" id="url" name="url" v-model.trim="url" placeholder="Enter image address">
@@ -40,15 +40,15 @@
 
 <script>
 
-const url = 'https://naturesgarden-default-rtdb.firebaseio.com/'
+const url = 'https://naturesgarden-backend.onrender.com/nature/'
 
 export default {
     
     data() {
         return {
             enteredName: '',
-            isTrue: false,
-            nativeTo: '',
+            edible: false,
+            origin: '',
             url: '',
             benefits: '',
             description: '',
@@ -59,22 +59,22 @@ export default {
 
     methods: {
         submitResource(){
-            if(this.enteredName === '' || !this.isTrue){
+            if(this.enteredName === ''){
                 this.invalidInput = true
                 return
             }
             this.invalidInput = false
             this.error = null
 
-            fetch(`${url}/resource.json`, {
+            fetch(`${url}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     name: this.enteredName, 
-                    isTrue: this.isTrue, 
-                    nativeTo: this.nativeTo,
+                    edible: this.edible, 
+                    origin: this.origin,
                     url: this.url,
                     benefits: this.benefits,
                     description: this.description
@@ -84,8 +84,8 @@ export default {
             })
 
             this.enteredName = ''
-            this.isTrue = false
-            this.nativeTo = ''
+            this.edible = false
+            this.origin = ''
             this.url = ''
             this.benefits = ''
             this.description = ''
