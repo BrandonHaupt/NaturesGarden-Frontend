@@ -37,8 +37,9 @@
 export default {
     props: ['id','name', 'isTrue', 'nativeTo', 'url', 'benefits', 'description'],
 
+    inject: ['deleteItem'],
 
-       data(){
+    data(){
         return{
             results: []
         }
@@ -80,27 +81,7 @@ export default {
         // }
 
         
-    deleteItem(id) {
-    const url = `https://naturesgarden-default-rtdb.firebaseio.com/resource/${id}.json`;
-
-    // firebase.auth().currentUser.getIdToken(true)
-
-    fetch(url, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // Handle success
-    })
-    .catch(error => {
-        console.error(error);
-        // Handle error
-    });
-    }
-
-       
+   
     }
 };
 </script>

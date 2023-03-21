@@ -20,9 +20,12 @@
                 :nativeTo='result.nativeTo'
                 :benefits='result.benefits'
                 :description='result.description'
-                :url='result.url'
-            ></resource-result>
+                :url='result.url'>
+            </resource-result>
+             <button class="delete" @click="deleteItem(id)">Delete</button>
         </ul>
+
+       
     </section>
 
 </template>
@@ -66,7 +69,7 @@ export default {
         return{
             resources: this.storedResources,
             addResource: this.addResource,
-            deleteResource: this.removeResource
+            deleteItem: this.deleteItem
         }
     },
 
@@ -133,6 +136,31 @@ export default {
         //     const resIndex = this.storedResources.findIndex(res => res.id === resId)
         //     this.storedResources.splice(resIndex, 1)
         // }
+
+        deleteItem(id) {
+            const url = `https://naturesgarden-default-rtdb.firebaseio.com/resource/${id}`;
+
+            // firebase.auth().currentUser.getIdToken(true)
+
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                // Handle success
+                const index = this.results.findIndex(item => item.id === id);
+                this.items.splice(index, 1);
+            })
+            .catch(error => {
+                console.error(error);
+                // Handle error
+            });
+        }
     },
 
 
