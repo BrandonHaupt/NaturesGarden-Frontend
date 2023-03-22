@@ -15,14 +15,15 @@
             <resource-result v-for="result in results"
                 :key="result.id"
                 :id='result.id'
+                :url='result.url'
                 :name='result.name'
                 :edible='result.edible'
                 :origin='result.origin'
                 :benefits='result.benefits'
                 :description='result.description'
-                :url='result.url'>
+            >
             </resource-result>
-             <button class="delete" @click="deleteItem(id)">Delete</button>
+             <!-- <button class="delete" @click="deleteItem(id)">Delete</button> -->
         </ul>
 
        
@@ -90,7 +91,7 @@ export default {
                 const results = []
                 for(const id in data){
                     results.push({
-                        id: id,
+                        id: data[id].id,
                         name: data[id].name,
                         edible: data[id].edible,
                         origin: data[id].origin,
@@ -140,8 +141,7 @@ export default {
         deleteItem(id) {
             const url = `https://naturesgarden-backend.onrender.com/nature/${id}`;
 
-            // firebase.auth().currentUser.getIdToken(true)
-
+            console.log(id)
             fetch(url, {
                 method: 'DELETE',
                 headers: {
@@ -150,11 +150,11 @@ export default {
             })
             .then(response => {
                 if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 // Handle success
                 const index = this.results.findIndex(item => item.id === id);
-                this.items.splice(index, 1);
+                this.results.splice(index, 1);
             })
             .catch(error => {
                 console.error(error);

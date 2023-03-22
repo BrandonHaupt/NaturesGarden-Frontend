@@ -6,13 +6,13 @@
         <div>
             <form @submit.prevent='submitResource'>
                 <!-- <label for="name">Resource Name: </label> -->
-                <input type="text" id="name" name="name" v-model.trim="enteredName" placeholder="Resource Name">
+                <input type="text" id="name" name="name" v-model.trim="name" placeholder="Resource Name">
 
                 <!-- If it is edible -->
                 <input type="checkbox" id="edible" value="true" name="edible" v-model="edible">
                 <label for="true"> Edible?</label>
                 
-                <!-- Native to -->
+                <!-- origin -->
                 <input type="text" id="origin" name="origin" v-model.trim="origin" placeholder="Where is the plant Native to?">
 
                 <!-- URL -->
@@ -46,7 +46,7 @@ export default {
     
     data() {
         return {
-            enteredName: '',
+            name: '',
             edible: false,
             origin: '',
             url: '',
@@ -59,7 +59,7 @@ export default {
 
     methods: {
         submitResource(){
-            if(this.enteredName === ''){
+            if(this.name === ''){
                 this.invalidInput = true
                 return
             }
@@ -72,10 +72,10 @@ export default {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: this.enteredName, 
+                    url: this.url,
+                    name: this.name, 
                     edible: this.edible, 
                     origin: this.origin,
-                    url: this.url,
                     benefits: this.benefits,
                     description: this.description
                 }),
@@ -83,10 +83,10 @@ export default {
                 this.error = 'Something went wrong, please try again later'
             })
 
-            this.enteredName = ''
+            this.url = ''
+            this.name = ''
             this.edible = false
             this.origin = ''
-            this.url = ''
             this.benefits = ''
             this.description = ''
 
