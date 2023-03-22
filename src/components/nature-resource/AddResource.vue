@@ -9,7 +9,7 @@
                 <input type="text" id="name" name="name" v-model.trim="name" placeholder="Resource Name">
 
                 <!-- If it is edible -->
-                <input type="checkbox" id="edible" value="true" name="edible" v-model="edible">
+                <input type="text" id="edible" name="edible" v-model="edible">
                 <label for="true"> Edible?</label>
                 
                 <!-- origin -->
@@ -46,10 +46,10 @@ export default {
     
     data() {
         return {
-            name: '',
-            edible: false,
-            origin: '',
             url: '',
+            name: '',
+            edible: '',
+            origin: '',
             benefits: '',
             description: '',
             invalidInput: false,
@@ -59,6 +59,7 @@ export default {
 
     methods: {
         submitResource(){
+
             if(this.name === ''){
                 this.invalidInput = true
                 return
@@ -85,7 +86,7 @@ export default {
 
             this.url = ''
             this.name = ''
-            this.edible = false
+            this.edible = ''
             this.origin = ''
             this.benefits = ''
             this.description = ''
