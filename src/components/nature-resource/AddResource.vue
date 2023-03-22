@@ -9,8 +9,7 @@
                 <input type="text" id="name" name="name" v-model.trim="name" placeholder="Resource Name">
 
                 <!-- If it is edible -->
-                <input type="text" id="edible" name="edible" v-model="edible">
-                <label for="true"> Edible?</label>
+                <input type="text" id="edible" name="edible" v-model="edible" placeholder="is it edible?">
                 
                 <!-- origin -->
                 <input type="text" id="origin" name="origin" v-model.trim="origin" placeholder="Where is the plant Native to?">
