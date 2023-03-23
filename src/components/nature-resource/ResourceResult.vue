@@ -3,13 +3,13 @@
         <div class="card__inner">
 
             <div class="card__body card__body--front">
-                <img :src='url' />
+                <img class="card-img-url" :src='url' />
                 <h2>{{name}}</h2>
             </div>
 
             <div class="card__body card__body--back">
                 <div class="card__title">
-                    <p class="id">ID: {{id}}</p>
+                    <!-- <p class="id">ID: {{id}}</p> -->
                     <div class="line1">
                         <p class="nativeTo">Native To: {{origin}}</p>
                         <p class="edible">Edible: {{edible}}</p>
@@ -45,43 +45,5 @@ export default {
         }
     },
 
-
-//   computed: {
-//     ratingClass() {
-//       return 'highlight rating--' + this.rating;
-//     },
-//   },
-
-    methods: {
-        // deleteResource(resId){
-        //     // const resIndex = this.loadResource.findIndex(res => res.id === resId)
-        //     // this.loadResource.splice(resIndex, 1)
-        //     console.log(resId)
-        //     // fetch(`${url}${resId}`, {method: 'DELETE'})
-        //     // .then(() => console.log(this.resId))
-
-        //     // DELETE request using fetch with async/await
-        //     // fetch(`${url}resource/${resId}`, { method: 'DELETE' });
-
-        //     fetch(`${url}resource/${resId}`, { method: 'DELETE' })
-        //     .then(async response => {
-        //         const isJson = response.headers.get('content-type').includes('application/json');
-        //         const data = isJson && await response.json();
-
-        //         // check for error response
-        //         if (!response.ok) {
-        //             // get error message from body or default to response status
-        //             const error = (data && data.message) || response.status;
-        //             return Promise.reject(error);
-        //         }
-
-        //         this.status = 'Delete successful';
-        //     })
-            
-        // }
-
-        
-   
-    }
 };
 </script>

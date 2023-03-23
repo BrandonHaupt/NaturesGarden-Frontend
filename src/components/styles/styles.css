@@ -16,11 +16,6 @@ body {
   min-height: 100vh;
 }
 
-main {
-  display: grid;
-  grid-template-areas: "create main main main" "create main main main" "create main main main" "footer footer footer footer";
-}
-
 footer {
   grid-area: footer;
 }
@@ -29,15 +24,14 @@ footer {
   width: 300px;
   height: 400px;
   perspective: 800px;
-  display: grid;
-  grid-area: main;
-  margin: 2rem 0;
+  margin: 2rem;
 }
 .card__inner {
   position: relative;
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  text-align: center;
 }
 .card:hover .card__inner {
   transform: rotateY(180deg);
@@ -60,8 +54,6 @@ footer {
 }
 .card__body--front h2 {
   position: absolute;
-  top: 40%;
-  left: 25%;
   color: white;
 }
 .card__body--back {
@@ -82,6 +74,70 @@ footer {
 }
 .card__title .line1 .nativeTo {
   padding: 0 1rem 0 0;
+}
+
+@media (min-width: 60em) {
+  main .resource-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 80em) {
+  main {
+    margin: 12rem 0;
+  }
+  main .card-img-url {
+    filter: brightness(50%);
+  }
+  main .resource-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 25rem;
+    gap: 2rem 0;
+  }
+  main .resource-cards article {
+    margin: 0;
+  }
+  main .create-form-section {
+    width: 30%;
+    object-fit: fill !important;
+    grid-area: create;
+    position: fixed;
+  }
+  main .create-form-section form {
+    width: 350px;
+  }
+  main .create-form-section form input, main .create-form-section form textarea {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 50px;
+    border: 2px solid #4E8934;
+    color: rgb(31, 56, 31);
+    font-size: 1rem;
+    background-image: url("../img/Card-bottom.png");
+  }
+  main .create-form-section form input::placeholder, main .create-form-section form textarea::placeholder {
+    color: rgb(25, 25, 25);
+  }
+  main .create-form-section .form-submit-button {
+    padding: 0 10px;
+  }
+  main .create-form-section .form-submit-button button {
+    border: none;
+    border-radius: 40px;
+    background-color: #4E8934;
+    border: 2px solid #4E8934;
+    padding: 8px 20px;
+    color: white;
+    font-size: 1.1rem;
+  }
+  main .create-form-section .form-submit-button button:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #4E8934;
+    transition: 0.2s ease-in-out;
+    color: black;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

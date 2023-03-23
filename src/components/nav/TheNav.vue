@@ -7,6 +7,7 @@
                 </li>
             </ul>
         </nav>
+        <img class="leaves" src="../img/Leaves.png" alt=""/>
     </header>
 </template>
 
@@ -15,7 +16,7 @@
 header {
   width: 100%;
   height: 5rem;
-  background-color: #11005c;
+  background-color: #4E8934;
 }
 
 nav {
@@ -36,7 +37,6 @@ li {
   margin: 0 2rem;
 }
 
-
 a {
   text-decoration: none;
   background: transparent;
@@ -55,4 +55,8 @@ a.router-link-active {
   background-color: #1a037e;
 }
 
+.leaves{
+  width: 100%;
+  margin: -15px 0;
+}
 </style>

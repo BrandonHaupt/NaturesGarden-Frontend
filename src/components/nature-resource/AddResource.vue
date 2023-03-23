@@ -1,38 +1,34 @@
 
 
 <template>
-    <section>
+    <aside class="create-form-section">
+        <form  @submit='submitResource'>
+            <!-- <label for="name">Resource Name: </label> -->
+            <input type="text" id="name" name="name" v-model.trim="name" placeholder="Resource Name">
 
-        <div>
-            <form @submit.prevent='submitResource'>
-                <!-- <label for="name">Resource Name: </label> -->
-                <input type="text" id="name" name="name" v-model.trim="name" placeholder="Resource Name">
+            <!-- If it is edible -->
+            <input type="text" id="edible" name="edible" v-model="edible" placeholder="is it edible?">
+            
+            <!-- origin -->
+            <input type="text" id="origin" name="origin" v-model.trim="origin" placeholder="Where is the plant Native to?">
 
-                <!-- If it is edible -->
-                <input type="text" id="edible" name="edible" v-model="edible" placeholder="is it edible?">
-                
-                <!-- origin -->
-                <input type="text" id="origin" name="origin" v-model.trim="origin" placeholder="Where is the plant Native to?">
+            <!-- URL -->
+            <input type="text" id="url" name="url" v-model.trim="url" placeholder="Enter image address">
 
-                <!-- URL -->
-                <input type="text" id="url" name="url" v-model.trim="url" placeholder="Enter image address">
+            <!-- Benefits -->
+            <textarea name="benefits" id="benefits" cols="30" rows="1" placeholder="Enter the benefits of the plant" v-model="benefits" />
 
-                <!-- Benefits -->
-                <textarea name="benefits" id="benefits" cols="30" rows="1" placeholder="Enter the benefits of the plant" v-model="benefits" />
+            <!-- description -->
+            <textarea name="description" id="description" cols="30" rows="1" placeholder="Enter the description of the plant" v-model="description" />
 
-                <!-- description -->
-                <textarea name="description" id="description" cols="30" rows="1" placeholder="Enter the description of the plant" v-model="description" />
-
-                <p v-if="invalidInput">One or more input fields are invalid. Please check your provided data.</p>
-                <p v-if="error">{{error}}</p>
-                
-                <div>
-                    <button>Submit</button>
-                </div>
-            </form>
-        </div>
-
-    </section>
+            <p v-if="invalidInput">One or more input fields are invalid. Please check your provided data.</p>
+            <p v-if="error">{{error}}</p>
+            
+            <div class="form-submit-button">
+                <button>Submit</button>
+            </div>
+        </form>
+    </aside>
 
 </template>
 

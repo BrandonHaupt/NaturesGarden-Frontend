@@ -1,17 +1,17 @@
 <!-- This displays the data -->
 <template>
 
-    <section>
+    <section class="resource">
 
-        <div>
+        <!-- <div>
             <button @click="loadResource">Load Submitted Experiences</button>
-        </div>
+        </div> -->
 
         <p v-if="isLoading">Loading...</p>
         <p v-else-if="!isLoading && error">{{error}}</p>
         <p v-if="!isLoading && (!results || results.length === 0)">No data found. Start adding some first.</p>
 
-        <ul v-else-if="!isLoading && results && results.length > 0">
+        <ul class="resource-cards" v-else-if="!isLoading && results && results.length > 0">
             <resource-result v-for="result in results"
                 :key="result.id"
                 :id='result.id'
@@ -113,30 +113,9 @@ export default {
 
         // This should automatically load the data
         mounted(){
-            this.loadExperiences()
+            this.loadResource()
         },
 
-
-
-        // // Somethign
-        // addResource(name, isEdible, nativeTo, url, benefits, description){
-        //     const newResource = {
-        //         id: new Date().toISOString(),
-        //         name: name,
-        //         isEdible: isEdible,
-        //         nativeTo: nativeTo,
-        //         url: url,
-        //         benefits: benefits,
-        //         description: description
-        //     }
-        //     this.storedResources.unshift(newResource)
-        // },
-
-        // // Delete Resource
-        // removeResource(resId){
-        //     const resIndex = this.storedResources.findIndex(res => res.id === resId)
-        //     this.storedResources.splice(resIndex, 1)
-        // }
 
         deleteItem(id) {
             const url = `https://naturesgarden-backend.onrender.com/nature/${id}`;
@@ -165,7 +144,5 @@ export default {
 
 
 }
-
-
 
 </script>
