@@ -88,6 +88,9 @@ footer {
   main .card-img-url {
     filter: brightness(50%);
   }
+  main .loading {
+    text-align: center;
+  }
   main .resource-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

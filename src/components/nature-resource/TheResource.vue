@@ -7,7 +7,7 @@
             <button @click="loadResource">Load Submitted Experiences</button>
         </div> -->
 
-        <p v-if="isLoading">Loading...</p>
+        <p class="loading" v-if="isLoading">Loading...</p>
         <p v-else-if="!isLoading && error">{{error}}</p>
         <p v-if="!isLoading && (!results || results.length === 0)">No data found. Start adding some first.</p>
 
@@ -41,6 +41,9 @@ export default {
 
     created(){
         this.loadResource()
+        // const resourceId = this.$route.params.resourceId
+
+        // const selectedResource = this.
     },
 
     components: {

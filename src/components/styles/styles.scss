@@ -142,6 +142,10 @@ footer {
             filter: brightness(50%);
         }
 
+        .loading {
+            text-align: center;
+        }
+
         .resource-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

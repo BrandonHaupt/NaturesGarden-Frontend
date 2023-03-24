@@ -18,8 +18,8 @@
                     <p class="description">{{description}}</p>
                 </div>
                 <div class="buttons">
-                    <button class="edit">Edit</button>
-                    <button class="delete" @click="deleteItem(id)">Delete</button>
+                    <button class="edit-resource">Edit</button>
+                    <button class="delete-resource" @click="deleteItem(id)">Delete</button>
                 </div>
             </div>
         </div>
@@ -38,10 +38,11 @@ export default {
     props: ['id','name', 'edible', 'origin', 'url', 'benefits', 'description'],
 
     inject: ['deleteItem'],
-
+   
     data(){
         return{
-            results: []
+            results: [],
+            showModal: false,
         }
     },
 
