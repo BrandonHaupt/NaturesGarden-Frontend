@@ -73,12 +73,43 @@ footer {
   background-repeat: no-repeat;
   transform: rotateY(180deg);
 }
+.card__body--back .buttons .view-button {
+  color: black;
+  text-decoration: none;
+  margin: 0 10px 0 0;
+  text-align: center;
+  border: 1px solid white;
+  padding: 0px 10px;
+  border-radius: 50px;
+  background-color: white;
+}
+.card__body--back .buttons .view-button:hover {
+  cursor: pointer;
+  border: 3px solid green;
+  color: white;
+  background-color: green;
+}
+.card__body--back .buttons .delete-resource {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  border: 3px solid white;
+  background-color: none;
+  border-radius: 50px;
+  padding: 2px 10px;
+}
+.card__body--back .buttons .delete-resource:hover {
+  border: 3px solid green;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
 .card__title {
   padding: 10px;
 }
 .card__title .benefits, .card__title .description {
   overflow: auto;
-  height: 100px;
+  height: 70px;
   margin: 1rem 0;
 }
 .card__title .line1 {
@@ -115,6 +146,25 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+  main .form-submit-button {
+    padding: 10px 0;
+  }
+  main .form-submit-button button {
+    border: none;
+    border-radius: 40px;
+    background-color: #4E8934;
+    border: 3px solid #4E8934;
+    padding: 4px 20px;
+    color: white;
+    font-size: 1.1rem;
+  }
+  main .form-submit-button button:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid #4E8934;
+    transition: 0.2s ease-in-out;
+    color: black;
+  }
 }
 @media (min-width: 80em) {
   main {
@@ -126,20 +176,12 @@ footer {
   main .loading {
     text-align: center;
   }
-  main .resource-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 25rem;
-    gap: 2rem 0;
-  }
-  main .resource-cards article {
-    margin: 0;
-  }
   main .create-form-section {
     width: 30%;
-    object-fit: fill !important;
-    grid-area: create;
+    object-fit: fill;
     position: fixed;
+    top: 22rem;
+    left: 2rem;
   }
   main .create-form-section form {
     width: 350px;
@@ -152,7 +194,7 @@ footer {
     border: 2px solid #4E8934;
     color: rgb(31, 56, 31);
     font-size: 1rem;
-    background-image: url("../img/Card-bottom.png");
+    background-color: rgb(145, 106, 73);
   }
   main .create-form-section form input::placeholder, main .create-form-section form textarea::placeholder {
     color: rgb(25, 25, 25);
@@ -175,6 +217,15 @@ footer {
     border: 2px solid #4E8934;
     transition: 0.2s ease-in-out;
     color: black;
+  }
+  main .resource-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 25rem;
+    gap: 2rem;
+  }
+  main .resource-cards article {
+    margin: 0;
   }
 }
 

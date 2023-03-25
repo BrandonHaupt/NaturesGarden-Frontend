@@ -16,7 +16,7 @@
       <h1>Loading...</h1>
     </div>
 
-    <form @submit.prevent="submitForm">
+    <form class="form-show" @submit.prevent="submitForm">
       <!-- <label for="name">Resource Name: </label> -->
         <input type="text" id="name" name="name" v-model.trim="item.name" placeholder="Resource Name">
 
@@ -149,6 +149,14 @@ export default {
       background-position: 800px 0
     }
   }
+
+  .show-resource-page{
+    padding: 10px;
+  }
   
+  .form-show {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 </style>

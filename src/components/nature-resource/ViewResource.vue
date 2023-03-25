@@ -8,8 +8,8 @@
 
             <div class="card__body card__body--back">
                 <div class="card__title">
-                    <p class="id">ID: {{id}}</p>
-                    <h2>{{name}}</h2>
+                    <!-- <p class="id">ID: {{id}}</p> -->
+                    <h3>{{name}}</h3>
                     <div class="line1">
                         <p class="nativeTo">Native To: {{origin}}</p>
                         <p class="edible">Edible: {{edible}}</p>
