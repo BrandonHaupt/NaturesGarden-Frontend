@@ -1,14 +1,23 @@
 <template>
-  <div v-if="item">
-    <h1>{{ log.date }}</h1>
-    <p>{{ log.time }}</p>
-    <img :src="log.image" width="500"/>
-  </div>
+  <!-- <router-view>
+  </router-view> -->
+    <div v-if="item">
+      <h1>{{ item.name }}</h1>
+      <p>{{ item.benefits }}</p>
+      <img :src="item.url" width="500"/>
+    </div>
+
+    <div class="loading" v-else>
+      <h1>Loading...</h1>
+    </div>
 </template>
 
 <script>
 export default {
   name: 'ShowResource',
+
+  inject: ['results'],
+
   data() {
     return {
       item: null

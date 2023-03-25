@@ -33,7 +33,7 @@
 
 
 <script>
-import ResourceResult from './ResourceResult.vue'
+import ResourceResult from './ViewResource.vue'
 
 const url = 'https://naturesgarden-backend.onrender.com/nature/'
 

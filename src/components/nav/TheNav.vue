@@ -3,7 +3,7 @@
         <nav>
             <ul>
                 <li>
-                    <router-link to="/">Home</router-link>
+                    <router-link to="/ResourceResult">Home</router-link>
                 </li>
             </ul>
         </nav>
