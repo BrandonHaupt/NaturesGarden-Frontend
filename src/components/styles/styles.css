@@ -8,12 +8,24 @@
 }
 
 img, picture, svg, video {
-  display: block;
   max-width: 100%;
 }
 
 body {
   min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+main .resource-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
 }
 
 footer {
@@ -24,7 +36,7 @@ footer {
   width: 300px;
   height: 400px;
   perspective: 800px;
-  margin: 2rem;
+  display: grid;
 }
 .card__inner {
   position: relative;
@@ -76,9 +88,32 @@ footer {
   padding: 0 1rem 0 0;
 }
 
+.create-form-section {
+  width: 90%;
+}
+.create-form-section form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+
+@media (min-width: 40em) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+  }
+  main .resource-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (min-width: 60em) {
   main .resource-cards {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 80em) {

@@ -8,7 +8,6 @@
 } 
 
 img, picture, svg, video {
-    display: block; 
     max-width: 100%;
 }
 
@@ -30,10 +29,17 @@ $green-color: #4E8934;
 }
 
 main {
-    // display: grid;
-    // justify-items: center;
-    // padding: 10px 0;
-    // margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+
+    .resource-cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
 }
 
 
@@ -46,11 +52,11 @@ footer {
 .card {
 	@include card-size;
 	perspective: 800px;
-    // display: grid;
+    display: grid;
     // grid-area: main;
 
     // Spacing between cards
-    margin: 2rem;
+    // margin: 2rem;
 
     &__inner {
         position: relative;
@@ -113,6 +119,19 @@ footer {
 }
 
 
+// ############################################
+// ############### Form Stuff #################
+// ############################################
+
+.create-form-section {
+    width: 90%;
+    form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+}
+
 
 
 // ############################################
@@ -121,13 +140,29 @@ footer {
 
 
 @media (min-width: 40em){
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5rem;
+        
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+   
     
-  }
+}
   
 @media (min-width: 60em){
     main {
         .resource-cards {
-            grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

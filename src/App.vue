@@ -3,8 +3,6 @@
   
   <main>
     <router-view></router-view>
-    <!-- <add-resource></add-resource>
-    <the-resource></the-resource> -->
   </main>
   <!-- <the-footer></the-footer> -->
 </template>
@@ -20,9 +18,6 @@ export default {
 
   components: {
     TheNav,
-    // TheFooter,
-    // AddResource,
-    // TheResource
   },
 
   mounted() {

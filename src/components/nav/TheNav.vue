@@ -14,9 +14,11 @@
 
 <style scoped>
 header {
+  position: relative;
   width: 100%;
   height: 5rem;
   background-color: #4E8934;
+  z-index: 5;
 }
 
 nav {

@@ -149,3 +149,39 @@ export default {
 }
 
 </script>
+
+<style scoped>
+    .loading {
+        width: 300px;
+        height: 400px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 2rem;
+        padding: 20px 0;
+        text-transform: uppercase;
+        color: white;
+
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: linear-gradient(to right, 
+            rgba(31,82,18,1) 0%, 
+            rgba(24,112,9,1) 20%, 
+            rgba(33,130,16,1) 42%, 
+            rgba(31,82,18,1) 100%
+        );
+    }
+
+    @keyframes placeHolderShimmer {
+        0% {
+            background-position: -800px 0
+        }
+        100% {
+            background-position: 800px 0
+        }
+    }
+</style>
