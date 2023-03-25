@@ -127,6 +127,38 @@ footer {
   grid-template-columns: repeat(1, 1fr);
   width: 100%;
 }
+.create-form-section input, .create-form-section textarea {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  border-radius: 50px;
+  border: 2px solid #4E8934;
+  color: rgb(31, 56, 31);
+  font-size: 1rem;
+  background-color: rgb(145, 106, 73);
+}
+.create-form-section input::placeholder, .create-form-section textarea::placeholder {
+  color: rgb(25, 25, 25);
+}
+.create-form-section .form-submit-button {
+  padding: 10px;
+}
+.create-form-section .form-submit-button button {
+  border: none;
+  border-radius: 40px;
+  background-color: #4E8934;
+  border: 3px solid #4E8934;
+  padding: 4px 20px;
+  color: white;
+  font-size: 1.1rem;
+}
+.create-form-section .form-submit-button button:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 3px solid #4E8934;
+  transition: 0.2s ease-in-out;
+  color: black;
+}
 
 @media (min-width: 40em) {
   main {

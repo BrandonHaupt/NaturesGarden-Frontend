@@ -1,15 +1,18 @@
 <template>
 
   <section class="show-resource-page">
-    <div v-if="item">
+    <div class="main-show-container" v-if="item">
       <section class="item-image">
         <img :src="item.url"/>
       </section>
-      <h1>{{ item.name }}</h1>
-      <p>{{ item.origin }}</p>
-      <p>{{ item.edible }}</p>
-      <p>{{ item.benefits }}</p>
-      <p>{{ item.description }}</p>
+      <section class="item-info">
+        <h1>{{ item.name }}</h1>
+        <p>{{ item.origin }}</p>
+        <p>{{ item.edible }}</p>
+        <p>{{ item.benefits }}</p>
+        <p>{{ item.description }}</p>
+      </section>
+     
     </div>
 
     <div class="loading" v-else>
@@ -41,7 +44,7 @@
         <button>Submit</button>
         <div class="form-submit-button">
         </div>
-      </form>
+    </form>
   </section>
 
 </template>
@@ -150,8 +153,42 @@ export default {
     }
   }
 
+ .show-resource-page{
+    padding: 10px;
+  }
+
+  .main-show-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem 0;
+  }
+
+  .item-info {
+    width: 90%;
+    padding-left: 10px;
+  }
+  
+  .form-show {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+
+
+@media (min-width: 80em){
   .show-resource-page{
     padding: 10px;
+  }
+
+  .main-show-container{
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 2rem 0;
+  }
+
+  .item-info {
+    width: 50%;
+    padding-left: 10px;
   }
   
   .form-show {
@@ -159,4 +196,5 @@ export default {
     grid-template-columns: repeat(2, 1fr);
   }
 
+}
 </style>

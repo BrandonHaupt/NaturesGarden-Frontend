@@ -162,10 +162,49 @@ footer {
 
 .create-form-section {
     width: 90%;
+
     form {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 5px 10px;
+        margin: 5px 10px;
+        border-radius: 50px;
+        border: 2px solid $green-color;
+        color: rgb(31, 56, 31);
+        font-size: 1rem;
+        // background-image: url('../img/Card-bottom.png');
+        background-color: rgb(145, 106, 73);
+
+        &::placeholder{
+            color: rgb(25, 25, 25);
+        }
+    }
+
+    .form-submit-button {
+        padding: 10px;
+
+        button {
+            border: none;
+            border-radius: 40px;
+            background-color: $green-color;
+            border: 3px solid $green-color;
+            padding: 4px 20px;
+            color: white;
+            font-size: 1.1rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: white;
+                border: 3px solid $green-color;
+                transition: .2s ease-in-out;
+                color: black;
+            }
+        }
     }
 }
 
