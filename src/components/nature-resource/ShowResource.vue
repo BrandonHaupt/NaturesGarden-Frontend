@@ -167,6 +167,9 @@ export default {
     width: 90%;
     padding-left: 10px;
   }
+  .item-info h1{
+    font-size: 3rem;
+  }
   
   .form-show {
     display: grid;
