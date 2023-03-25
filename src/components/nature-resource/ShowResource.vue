@@ -98,7 +98,7 @@ export default {
       .then(response => {
         if (response.ok) {
           // Redirect to the log show page if the update is successful
-          this.$router.push(`/nature/${id}`);
+          this.$router.push(`/ShowResource/${id}`);
         } else {
           throw new Error('Error updating nature data.');
         }
