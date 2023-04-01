@@ -86,8 +86,9 @@ export default {
             this.benefits = ''
             this.description = ''
 
+            this.$router.push('/ResourceResult');
         }
-
+        
     },
 
 }
