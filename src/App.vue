@@ -20,12 +20,12 @@ export default {
     TheNav,
   },
 
-  mounted() {
-    // Redirect to about page after 3 seconds
-    setTimeout(() => {
-      this.$router.push('/ResourceResult');
-    }, 5000);
-  }
+  // mounted() {
+  //   // Redirect to about page after 3 seconds
+  //   setTimeout(() => {
+  //     this.$router.push('/ResourceResult');
+  //   }, 5000);
+  // }
 
 }
 </script>
