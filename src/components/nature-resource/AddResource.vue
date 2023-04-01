@@ -2,7 +2,7 @@
 
 <template>
     <aside class="create-form-section">
-        <form  @submit='submitResource'>
+        <form  @submit.prevent='submitResource'>
             <!-- <label for="name">Resource Name: </label> -->
             <input type="text" id="name" name="name" v-model.trim="name" placeholder="Resource Name">
 
@@ -86,7 +86,7 @@ export default {
             this.benefits = ''
             this.description = ''
 
-            this.$router.push('/ResourceResult');
+            this.$router.go()
         }
         
     },
